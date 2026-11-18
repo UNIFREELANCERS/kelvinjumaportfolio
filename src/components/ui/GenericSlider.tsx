@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 import ServicesCard from './ServicesCard';
 import PortfolioCard from './PortfolioCard';
@@ -20,6 +20,10 @@ import {
 
 type AllowedCard = CardData | PortfolioItem | Review | BlogItem;
 
+const subscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
+
 interface GenericSliderProps<T extends AllowedCard> {
   data: T[];
   slidesPerView: number;
@@ -33,14 +37,10 @@ export function GenericSlider<T extends AllowedCard>({
   heightClass,
   cardType,
 }: GenericSliderProps<T>) {
-  const [isClient, setIsClient] = useState(false);
+  const isClient = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
   const isReview = cardType === 'review';
   const isPortfolio = cardType === 'portfolio';
   const isBlog = cardType === 'blog';
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   if (!isClient) {
     // Return a placeholder during SSR to prevent hydration mismatch
