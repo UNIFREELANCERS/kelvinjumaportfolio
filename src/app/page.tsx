@@ -7,7 +7,8 @@ import { experiences, iconAndText, skills, reviews, buttons, portfolioData, blog
 import { GenericSlider } from "@/components/ui/GenericSlider";
 import OrangeButton from "@/components/ui/OrangeButton";
 import ArrowButton from "@/components/ui/ArrowButton";
-import whyImage from "../../why.jpg";
+import ceoImage from "../../ceo.png";
+import whyImage from "../../why.png";
 import PortfolioCarousel from "@/components/ui/PortfolioCarousel";
 import EmailContactForm from "@/components/ui/EmailContactForm";
 
@@ -59,7 +60,7 @@ export default function Home() {
             </div>
 
             <Image
-              src="/ceo.png"
+              src={ceoImage}
               alt="Portrait of Kelvin Oluoch Juma"
               width={1125}
               height={1125}
