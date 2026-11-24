@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kelvin Oluoch Juma | Full-Stack Web Developer & Digital Professional",
-  description: "Portfolio of Kelvin Oluoch Juma, a Kenyan Full-Stack Web Developer with over four years of experience building websites, web applications and digital solutions.",
+  title: "Kelvin Oluoch Juma | Full-Stack Developer, Data Engineer & AI Evaluator",
+  description: "Portfolio of Kelvin Oluoch Juma, a Kenyan full-stack web developer, data engineer and AI evaluator with experience in web applications, APIs, structured data and AI training and evaluation.",
 };
 
 export default function RootLayout({

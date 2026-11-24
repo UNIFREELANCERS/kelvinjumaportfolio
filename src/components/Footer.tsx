@@ -5,11 +5,12 @@ import Link from "next/link";
 import EmailContactForm from "./ui/EmailContactForm";
 
 const Footer = () => {
-    const navigation = [
+    const navigation: { label: string; href: string; external?: boolean }[] = [
         { label: "Home", href: "/#home" },
         { label: "About", href: "/#about" },
         { label: "Service", href: "/#service" },
-        { label: "Resume", href: "/#resume" },
+        { label: "Resume", href: "/resume.pdf", external: true },
+        { label: "Certifications", href: "/#certifications" },
         { label: "Project", href: "/#project" },
         { label: "Contact", href: "/#contact" },
     ];
@@ -54,7 +55,7 @@ const Footer = () => {
                         </div>
                         <span className="font-bold text-base sm:text-lg tracking-wide">KELVIN</span>
                     </Link>
-                    <p className="w-full h-auto lg:h-[61px] text-[16px] sm:text-[18px] lg:text-[20px] text-[#FCFCFD]">Kelvin Oluoch Juma is a Nairobi-based full-stack web developer, digital professional, and Founder and Team Lead of UNI Freelancers Africa.</p>
+                    <p className="w-full h-auto lg:h-[61px] text-[16px] sm:text-[18px] lg:text-[20px] text-[#FCFCFD]">Kelvin Oluoch Juma is a Nairobi-based full-stack web developer, data engineer, AI evaluator, professional AI practitioner, freelance IT professional, and Founder and Team Lead of UNI Freelancers Africa.</p>
                     <div className="flex gap-2 sm:gap-2.5">
                         {iconsAndUrl.map((item, idx) => {
                             const Icon = item.icon;
@@ -78,7 +79,7 @@ const Footer = () => {
                     <CustomeText title="Navigation" className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#FD853A]" />
                     <div className="flex flex-col gap-3 lg:gap-5">
                         {navigation.map((item) => (
-                            <Link href={item.href} key={item.label} className="text-[#FCFCFD] text-[14px] sm:text-[15px] lg:text-[16px] hover:text-[#FD853A] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                            <Link href={item.href} key={item.label} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} className="text-[#FCFCFD] text-[14px] sm:text-[15px] lg:text-[16px] hover:text-[#FD853A] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                                 {item.label}
                             </Link>
                         ))}

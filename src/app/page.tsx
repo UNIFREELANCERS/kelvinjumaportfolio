@@ -3,7 +3,7 @@ import CustomeText from "@/components/ui/CustomeText";
 import DualToggleButtons from "@/components/ui/DualButtons";
 import Image from "next/image";
 import { Star } from "lucide-react";
-import { experiences, iconAndText, skills, reviews, buttons, portfolioData, blogs, cardData } from '../data/data';
+import { experiences, iconAndText, skills, reviews, buttons, portfolioData, blogs, cardData, aiEvaluationExperience } from '../data/data';
 import { GenericSlider } from "@/components/ui/GenericSlider";
 import OrangeButton from "@/components/ui/OrangeButton";
 import ArrowButton from "@/components/ui/ArrowButton";
@@ -11,6 +11,7 @@ import ceoImage from "../../ceo.png";
 import whyImage from "../../why.png";
 import PortfolioCarousel from "@/components/ui/PortfolioCarousel";
 import EmailContactForm from "@/components/ui/EmailContactForm";
+import CertificationsSection from "@/components/ui/CertificationsSection";
 
 export default function Home() {
   return (
@@ -207,13 +208,29 @@ export default function Home() {
           </div>
 
           <p className="text-[#98A2B3] text-base sm:text-lg lg:text-xl leading-relaxed max-w-md">
-            I’m a Nairobi-based full-stack web developer and digital professional with 4+ years of experience and 15+ websites worked on. I build websites, web applications, and digital systems that solve practical problems. I’m pursuing a BA in Psychology (Year 3) at Chuka University and lead UNI Freelancers Africa, supporting youth digital skills and economic opportunities. I also serve as Chairperson and Lead Choreographer of Chuka University Dancers.
+            I’m a Nairobi-based full-stack web developer and digital professional with 4+ years of experience and 100+ websites worked on. I build websites, web applications, and digital systems that solve practical problems. I’m pursuing a BA in Psychology (Year 3) at Chuka University and lead UNI Freelancers Africa, supporting youth digital skills and economic opportunities. I also serve as Chairperson and Lead Choreographer of Chuka University Dancers.
           </p>
+
+          <div className="max-w-md">
+            <p className="text-[#667085] text-base sm:text-lg leading-relaxed">
+              Alongside my full-stack development, I work as a Data Engineer, AI Evaluator, Professional AI Practitioner and Freelance IT Professional. My AI training and evaluation experience includes projects associated with:
+            </p>
+            <ul aria-label="AI training and evaluation project associations" className="mt-3 flex flex-wrap gap-2">
+              {aiEvaluationExperience.map((organization) => (
+                <li
+                  key={organization}
+                  className="rounded-full border border-[#D0D5DD] bg-white px-3 py-1 text-sm font-medium text-[#475467]"
+                >
+                  {organization}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-8 w-full">
             <div className="flex flex-col">
               <CustomeText
-                title="15+"
+                title="100+"
                 className="text-[32px] sm:text-[36px] font-medium text-[#1D2939]"
               />
               <CustomeText
@@ -239,6 +256,8 @@ export default function Home() {
         </div>
       </div>
 
+      <CertificationsSection />
+
       {/* Portfolio */}
       <div id="project" className="w-full flex flex-col items-center px-4 sm:px-6 lg:px-[71px] py-12 sm:py-20 gap-10 lg:gap-12">
         <div className="w-full flex flex-col sm:flex-row justify-between items-start lg:items-center gap-6">
@@ -260,7 +279,7 @@ export default function Home() {
           </div>
 
           <div className="shrink-0">
-            <OrangeButton title="See All" href="#portfolio-cards" />
+            <OrangeButton title="See All" href="/portfolio" />
           </div>
         </div>
 

@@ -56,6 +56,17 @@ export interface CardData {
   imageSrc: string;
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  holder: string;
+  issued: string;
+  image: string;
+  width: number;
+  height: number;
+  description: string;
+}
+
 
 
 export const experiences: Experience[] = [
@@ -87,6 +98,7 @@ export const buttons: string[] = [
   "Web Applications",
   "Business & Organisations",
   "Creative & Portfolio Websites",
+  "Graphic Design",
 ];
 
 export const iconAndText: IconAndText[] = [
@@ -96,7 +108,7 @@ export const iconAndText: IconAndText[] = [
   },
   {
     icon: Award,
-    name: "15+ Websites Worked On",
+    name: "100+ Websites Worked On",
   },
   {
     icon: ShieldCheck,
@@ -105,6 +117,10 @@ export const iconAndText: IconAndText[] = [
 ];
 
 export const skills: string[] = [
+  "Data Engineering",
+  "Structured Data Handling",
+  "AI Training and Evaluation",
+  "AI Evaluation",
   "HTML5",
   "CSS3",
   "JavaScript",
@@ -143,6 +159,38 @@ export const skills: string[] = [
   "Problem-Solving",
   "Communication",
   "Team Collaboration",
+];
+
+export const certifications: Certification[] = [
+  {
+    title: "Full-Stack Development",
+    issuer: "Alison",
+    holder: "Kelvin Juma",
+    issued: "28 November 2024",
+    image: "/assets/certifications/alison-full-stack-development.png",
+    width: 1536,
+    height: 1024,
+    description: "Recognition of completing Alison's Full-Stack Development course.",
+  },
+  {
+    title: "AI Training and Evaluation: The Expert",
+    issuer: "Sovrano AI",
+    holder: "Kelvin Juma",
+    issued: "24 November 2026",
+    image: "/assets/certifications/sovrano-ai-training-evaluation-expert.png",
+    width: 991,
+    height: 586,
+    description: "Recognition of specialist training in AI training and evaluation.",
+  },
+];
+
+export const aiEvaluationExperience: string[] = [
+  "Mercor",
+  "Outlier",
+  "Turing",
+  "Hashlist",
+  "Loggy3",
+  "Sovrano AI",
 ];
 
 export const blogs: Blog[] = [
@@ -231,18 +279,22 @@ export const projectCategories = [
   "Web Applications",
   "Business & Organisations",
   "Creative & Portfolio Websites",
+  "Graphic Design",
 ];
 
 export const selectedProjects: PortfolioProject[] = [
   {
     title: "UNI Freelancers Africa",
-    image: "/assets/projects/uni-freelancers-desktop-home.jpg",
+    image: "/assets/projects/portfolio/uni-freelancers-africa/01.webp",
     description: "An initiative connecting young people with digital skills, practical work, and economic opportunities.",
     categories: ["Websites", "Business & Organisations"],
     href: "https://unifreelancersafrica.org/",
     screenshots: [
-      { src: "/assets/projects/uni-freelancers-desktop-home.jpg", alt: "UNI Freelancers Africa homepage on desktop" },
-      { src: "/assets/projects/uni-freelancers-mobile-home.jpg", alt: "UNI Freelancers Africa homepage on mobile" },
+      { src: "/assets/projects/portfolio/uni-freelancers-africa/01.webp", alt: "UNI Freelancers Africa homepage" },
+      { src: "/assets/projects/portfolio/uni-freelancers-africa/02.webp", alt: "UNI Freelancers Africa project screenshot 2" },
+      { src: "/assets/projects/portfolio/uni-freelancers-africa/03.webp", alt: "UNI Freelancers Africa project screenshot 3" },
+      { src: "/assets/projects/portfolio/uni-freelancers-africa/04.webp", alt: "UNI Freelancers Africa project screenshot 4" },
+      { src: "/assets/projects/portfolio/uni-freelancers-africa/05.webp", alt: "UNI Freelancers Africa project screenshot 5" },
     ],
   },
   {
@@ -313,46 +365,74 @@ export const selectedProjects: PortfolioProject[] = [
   },
   {
     title: "ChezaCheza Dress to Educate",
-    image: "/assets/projects/cheza-cheza-dress-to-educate-desktop-home.jpg",
+    image: "/assets/projects/portfolio/dresstoeducate/01.webp",
     description: "A merchandise and donation platform supporting children's education, wellbeing, and dance programming.",
     categories: ["Web Applications", "Business & Organisations"],
     href: "https://chezachezadresstoeducate.netlify.app/",
     screenshots: [
-      { src: "/assets/projects/cheza-cheza-dress-to-educate-desktop-home.jpg", alt: "ChezaCheza Dress to Educate homepage on desktop" },
-      { src: "/assets/projects/cheza-cheza-dress-to-educate-mobile-home.jpg", alt: "ChezaCheza Dress to Educate homepage on mobile" },
+      { src: "/assets/projects/portfolio/dresstoeducate/01.webp", alt: "ChezaCheza Dress to Educate homepage" },
+      { src: "/assets/projects/portfolio/dresstoeducate/02.webp", alt: "ChezaCheza Dress to Educate project screenshot 2" },
+      { src: "/assets/projects/portfolio/dresstoeducate/03.webp", alt: "ChezaCheza Dress to Educate project screenshot 3" },
+      { src: "/assets/projects/portfolio/dresstoeducate/04.webp", alt: "ChezaCheza Dress to Educate project screenshot 4" },
+      { src: "/assets/projects/portfolio/dresstoeducate/05.webp", alt: "ChezaCheza Dress to Educate project screenshot 5" },
     ],
   },
   {
     title: "ChezaCheza All Stars Auditions 2026",
-    image: "/assets/projects/cheza-cheza-all-stars-desktop-home.jpg",
+    image: "/assets/projects/portfolio/allstars-audition/01.webp",
     description: "An audition information and registration website for the ChezaCheza All Stars Academy 2026 intake.",
     categories: ["Web Applications", "Business & Organisations"],
     href: "https://chezachezaallstarsaudition2026.netlify.app/",
     screenshots: [
-      { src: "/assets/projects/cheza-cheza-all-stars-desktop-home.jpg", alt: "ChezaCheza All Stars Auditions 2026 website on desktop" },
-      { src: "/assets/projects/cheza-cheza-all-stars-mobile-home.jpg", alt: "ChezaCheza All Stars Auditions 2026 website on mobile" },
+      { src: "/assets/projects/portfolio/allstars-audition/01.webp", alt: "ChezaCheza All Stars Auditions 2026 homepage" },
+      { src: "/assets/projects/portfolio/allstars-audition/02.webp", alt: "ChezaCheza All Stars Auditions 2026 project screenshot 2" },
+      { src: "/assets/projects/portfolio/allstars-audition/03.webp", alt: "ChezaCheza All Stars Auditions 2026 project screenshot 3" },
+      { src: "/assets/projects/portfolio/allstars-audition/04.webp", alt: "ChezaCheza All Stars Auditions 2026 project screenshot 4" },
     ],
   },
   {
     title: "Huit Fambo Organisation",
-    image: "/assets/projects/huit-fambo-desktop-home.jpg",
+    image: "/assets/projects/portfolio/huitfambo/01.webp",
     description: "An organisation website presenting youth empowerment through dance, mentorship, and environmental initiatives.",
     categories: ["Websites", "Business & Organisations"],
     href: "https://huitfamboorg.netlify.app/",
     screenshots: [
-      { src: "/assets/projects/huit-fambo-desktop-home.jpg", alt: "Huit Fambo homepage on desktop" },
-      { src: "/assets/projects/huit-fambo-mobile-home.jpg", alt: "Huit Fambo homepage on mobile" },
+      { src: "/assets/projects/portfolio/huitfambo/01.webp", alt: "Huit Fambo homepage" },
+      { src: "/assets/projects/portfolio/huitfambo/02.webp", alt: "Huit Fambo project screenshot 2" },
+      { src: "/assets/projects/portfolio/huitfambo/03.webp", alt: "Huit Fambo project screenshot 3" },
+      { src: "/assets/projects/portfolio/huitfambo/04.webp", alt: "Huit Fambo project screenshot 4" },
+      { src: "/assets/projects/portfolio/huitfambo/05.webp", alt: "Huit Fambo project screenshot 5" },
+      { src: "/assets/projects/portfolio/huitfambo/06.webp", alt: "Huit Fambo project screenshot 6" },
+      { src: "/assets/projects/portfolio/huitfambo/07.webp", alt: "Huit Fambo project screenshot 7" },
     ],
   },
   {
     title: "Meshack Omondi Otieno",
-    image: "/assets/projects/meshack-performer-desktop-home.jpg",
+    image: "/assets/projects/portfolio/meshack/01.webp",
     description: "A performing-artist portfolio presenting Meshack's dance work, biography, performances, and gallery.",
     categories: ["Websites", "Creative & Portfolio Websites"],
     href: "https://meshackprofessionalperformer.netlify.app/",
     screenshots: [
-      { src: "/assets/projects/meshack-performer-desktop-home.jpg", alt: "Meshack Omondi Otieno portfolio on desktop" },
-      { src: "/assets/projects/meshack-performer-mobile-home.jpg", alt: "Meshack Omondi Otieno portfolio on mobile" },
+      { src: "/assets/projects/portfolio/meshack/01.webp", alt: "Meshack Omondi Otieno portfolio homepage" },
+      { src: "/assets/projects/portfolio/meshack/02.webp", alt: "Meshack Omondi Otieno project screenshot 2" },
+      { src: "/assets/projects/portfolio/meshack/03.webp", alt: "Meshack Omondi Otieno project screenshot 3" },
+    ],
+  },
+  {
+    title: "Graphic Design",
+    image: "/assets/projects/portfolio/graphic-design/01.webp",
+    description: "A selection of social media graphics, promotional flyers, and visual design work.",
+    categories: ["Graphic Design"],
+    screenshots: [
+      { src: "/assets/projects/portfolio/graphic-design/01.webp", alt: "Website development service Instagram graphic" },
+      { src: "/assets/projects/portfolio/graphic-design/02.webp", alt: "Pool Up to the Jungle event flyer" },
+      { src: "/assets/projects/portfolio/graphic-design/03.webp", alt: "Customer Service Week social media graphic" },
+      { src: "/assets/projects/portfolio/graphic-design/04.webp", alt: "Website development service Facebook graphic" },
+      { src: "/assets/projects/portfolio/graphic-design/05.webp", alt: "Promotional graphic design sample" },
+      { src: "/assets/projects/portfolio/graphic-design/06.webp", alt: "Nails By Denoo promotional graphic" },
+      { src: "/assets/projects/portfolio/graphic-design/07.webp", alt: "Squash Dance Crew event flyer" },
+      { src: "/assets/projects/portfolio/graphic-design/08.webp", alt: "Website development services promotional graphic" },
+      { src: "/assets/projects/portfolio/graphic-design/09.webp", alt: "Website development Facebook graphic" },
     ],
   },
   {

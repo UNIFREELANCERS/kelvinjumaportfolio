@@ -3,11 +3,12 @@ import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {
-    const menuItems = [
+    const menuItems: { label: string; href: string; external?: boolean }[] = [
         { label: "Home", href: "#home" },
         { label: "About", href: "#about" },
         { label: "Service", href: "#service" },
-        { label: "Resume", href: "#resume" },
+        { label: "Resume", href: "/resume.pdf", external: true },
+        { label: "Certifications", href: "#certifications" },
         { label: "Project", href: "#project" },
         { label: "Contact", href: "#contact" },
     ];
@@ -26,8 +27,10 @@ const Navbar = () => {
                     <a
                         key={item.label}
                         href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
                         aria-current={selected === item.label ? "location" : undefined}
-                        className={`w-[139px] h-[66px] flex items-center justify-center rounded-[60px] text-base font-medium transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${selected === item.label ? 'bg-[#FD853A] font-bold' : 'bg-transparent hover:bg-[#232323]'}`}
+                        className={`h-[66px] min-w-0 flex-1 px-1 flex items-center justify-center rounded-[60px] text-sm font-medium transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white xl:text-base ${selected === item.label ? 'bg-[#FD853A] font-bold' : 'bg-transparent hover:bg-[#232323]'}`}
                         onClick={() => setSelected(item.label)}
                     >
                         {item.label}
@@ -51,8 +54,10 @@ const Navbar = () => {
                     <a
                         key={item.label}
                         href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
                         aria-current={selected === item.label ? "location" : undefined}
-                        className={`w-[139px] h-[66px] flex items-center justify-center rounded-[60px] text-base font-medium transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${selected === item.label ? 'bg-[#FD853A] font-bold' : 'bg-transparent hover:bg-[#232323]'}`}
+                        className={`h-[66px] min-w-0 flex-1 px-1 flex items-center justify-center rounded-[60px] text-sm font-medium transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white xl:text-base ${selected === item.label ? 'bg-[#FD853A] font-bold' : 'bg-transparent hover:bg-[#232323]'}`}
                         onClick={() => setSelected(item.label)}
                     >
                         {item.label}
@@ -80,6 +85,8 @@ const Navbar = () => {
                             <a
                                 key={item.label}
                                 href={item.href}
+                                target={item.external ? "_blank" : undefined}
+                                rel={item.external ? "noopener noreferrer" : undefined}
                                 aria-current={selected === item.label ? "location" : undefined}
                                 className={`w-full h-[50px] flex items-center justify-center rounded-[25px] text-base font-medium transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${selected === item.label ? 'bg-[#FD853A] font-bold' : 'bg-transparent hover:bg-[#232323]'}`}
                                 onClick={() => {
